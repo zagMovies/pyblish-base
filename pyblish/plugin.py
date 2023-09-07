@@ -826,7 +826,7 @@ class Instance(AbstractEntity):
 
     def __init__(self, name, parent=None, **kwargs):
         super(Instance, self).__init__(name, parent)
-        self._data["family"] = "default"
+        self._data["families"] = []
         self._data["name"] = name
         self._data.update(kwargs)
 

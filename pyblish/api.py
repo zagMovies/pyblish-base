@@ -100,7 +100,6 @@ from .lib import (
 )
 
 from .logic import (
-    plugins_by_family,
     plugins_by_host,
     plugins_by_instance,
     plugins_by_targets,
@@ -246,7 +245,6 @@ __all__ = [
     "registered_guis",
     "deregister_gui",
 
-    "plugins_by_family",
     "plugins_by_host",
     "plugins_by_instance",
     "instances_by_plugin",
