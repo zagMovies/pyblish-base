@@ -592,10 +592,12 @@ def __implicit_process(plugin, context, instance=None, action=None):
             provider.invoke(runner)
             result["success"] = True
     except Exception as error:
+        full_traceback = traceback.format_exc()
         lib.emit("pluginFailed", plugin=plugin, context=context,
                  instance=instance, error=error)
         lib.extract_traceback(error, plugin.__module__)
         result["error"] = error
+        result["traceback"] = full_traceback
         log.exception(result["error"].formatted_traceback)
 
     __end = time.time()
